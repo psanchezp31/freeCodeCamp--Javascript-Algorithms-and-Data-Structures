@@ -1,0 +1,14 @@
+function convertHTML(str) {
+let regex = /[&<>"']/g
+let obj = {"&":"&amp;", 
+           "<": "&lt;",
+           ">": "&gt;",
+           "\"": "&quot;",
+           "\'": "&apos;"}
+
+
+var replace = str.replaceAll(regex, char => obj[char])
+//The second arguments for replaceAll() is a function with the matched character as a parameter. It returns the correspondant entity from obj.
+return replace;
+
+}

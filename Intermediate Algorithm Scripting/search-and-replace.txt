@@ -1,0 +1,14 @@
+function myReplace(str, before, after) {
+  var testCaps = /^[A-Z]/g.test(before)
+  var letter = after.match(/^\w/g).toString()
+  
+  if(testCaps){
+    var newAfter = after.replace(letter,letter.toUpperCase())
+    console.log(newAfter)
+  }else{
+    newAfter = after.replace(letter,letter.toLowerCase())
+  }
+  
+  return str.replace(before,newAfter);
+}
+myReplace("His name is Tom", "Tom", "john")

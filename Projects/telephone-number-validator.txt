@@ -1,0 +1,15 @@
+function telephoneCheck(str) {
+
+  //var test = /^(1[ -]?)?(\(?)(\d{3})(\)?)[ -]?(\d{3})[ -]?(\d{4})$/.test(str)
+  var withoutParentheses = /^(1[ -]?)?(\d{3})[ -]?(\d{3})[ -]?(\d{4})$/.test(str)
+  var withParentheses = /^(1[ -]?)?(\()(\d{3})(\))[ -]?(\d{3})[ -]?(\d{4})$/.test(str)
+
+  return withoutParentheses || withParentheses ?  true : false;
+  
+}
+
+console.log(telephoneCheck("555-555-5555"))
+console.log(telephoneCheck('(555-555-5555'))
+console.log(telephoneCheck('6054756961'))
+console.log(telephoneCheck('-1 (757) 622-7382'))
+telephoneCheck("555-555-5555");

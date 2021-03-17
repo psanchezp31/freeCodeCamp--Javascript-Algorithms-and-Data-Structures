@@ -1,0 +1,34 @@
+/*function flatten(arr) {
+  return Array.prototype.concat.apply([], arr);
+}
+
+function steamrollArray(arr) {
+  return flatten(           // return shalowly flattened array
+    arr.map(x=>             // with each x in array
+      Array.isArray(x)      // is x an array?
+        ? steamrollArray(x)    // if yes, return deeply flattened x
+        : x                 // if no, return just x
+    )
+  )
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));*/
+
+function steamrollArray(arr) {
+  var newarr = []
+  function flat(arr){
+  for(var i = 0;i<arr.length;i++){
+    if(Array.isArray(arr[i])){
+      console.log(arr[i])
+      console.log(newarr)
+       flat(arr[i])
+    }else{
+      newarr.push(arr[i])
+    }
+  }
+  }
+flat(arr) 
+return newarr
+}
+
+steamrollArray([1, [2], [3, [[4]]]])

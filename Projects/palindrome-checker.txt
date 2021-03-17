@@ -1,0 +1,15 @@
+function palindrome(str) {
+  
+  var original = str.toLowerCase().replace(/[\W_]+/g,"");
+  console.log(original)
+  var backwards = original.split("").reverse().join("")
+  console.log(backwards)
+  if (original == backwards) {
+return true;
+  } else {
+return false;
+  }
+}
+
+palindrome("almostomla");
+palindrome("1 eye for of 1 eye.")

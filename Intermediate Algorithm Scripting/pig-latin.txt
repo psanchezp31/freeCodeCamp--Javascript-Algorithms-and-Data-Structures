@@ -1,0 +1,23 @@
+function translatePigLatin(str) {
+  var vowels = /^[aeiou]/gi
+  var consonants = /^[^aeiou]+/gi
+  var hasVowels = vowels.test(str)
+  var hasConsonant = consonants.test(str)
+  var word = str.match(consonants)
+
+  if(hasVowels){
+      str +="way"
+      return str
+  }else if(hasConsonant){
+    var newStr = str.replace(word.toString(),"")
+    newStr+= word +"ay"
+    return newStr
+  }
+  
+  console.log(str)
+}
+
+translatePigLatin("algorithm");
+translatePigLatin("paragraphs");
+translatePigLatin("schwartz");
+

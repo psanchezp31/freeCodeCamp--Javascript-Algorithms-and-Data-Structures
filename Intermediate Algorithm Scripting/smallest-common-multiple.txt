@@ -1,0 +1,29 @@
+function smallestCommons(arr) {
+let min = Math.min(...arr)
+let max = Math.max(...arr)
+var range = []
+var result;
+
+for(var i=min; i<=max; i++){
+  range.push(i)
+}
+
+function gcd(a,b){
+  for(var i = 0; i<=a;i++){
+    if(a%i ===0 && b%i===0){
+      result = i
+    }
+  }
+  return result
+}
+
+function lcm(a,b){
+ var lcm = a*b / gcd(a,b)
+ return lcm
+}
+
+var resultLcm = range.reduce(lcm); 
+return resultLcm;
+
+}
+smallestCommons([1,5]);

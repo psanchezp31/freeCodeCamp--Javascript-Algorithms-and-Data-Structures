@@ -1,0 +1,25 @@
+function rot13(str) {
+  var result = ""
+  var regex = /([A-M])\w+/
+
+  var aToM = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', " ", "?", ".", "!"]
+  var nToZ = ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', " ", "?", ".", "!"]
+
+
+  var word = str.split("")
+  console.log(word)
+ 
+  for(var i = 0; i<word.length;i++){
+        for(var j = 0; j<aToM.length;j++){
+          if(word[i] == aToM[j]){
+            result+=nToZ[j]
+          }else if(word[i]== nToZ[j]){
+            result+=aToM[j]
+          }
+        }
+  }
+  console.log(result)
+  return result;
+}
+
+rot13("SERR PBQR PNZC");

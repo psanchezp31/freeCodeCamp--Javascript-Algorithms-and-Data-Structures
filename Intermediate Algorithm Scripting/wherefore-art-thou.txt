@@ -1,0 +1,24 @@
+/*function whatIsInAName(collection, source) {
+  return collection.filter(item => Object.entries(source).every(([k, v]) => v == item[k]));
+}*/
+
+function whatIsInAName(collection, source) {
+  var arr = [];
+  let sourceKeys = Object.keys(source)
+  for(let i=0; i<collection.length; i++){
+    var flag = true
+    for(let j = 0; j<sourceKeys.length;j++){
+      var objectCol = collection[i];
+      if((objectCol[sourceKeys[j]] !== source[sourceKeys[j]])){
+        flag =  false
+      }
+    }
+    if(flag){
+      arr.push(collection[i]);
+    }
+  }
+  console.log(arr);
+  return arr;
+}
+
+whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 });

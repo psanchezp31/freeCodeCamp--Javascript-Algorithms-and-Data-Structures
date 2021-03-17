@@ -1,0 +1,37 @@
+//MY SOLUTION
+/*function pairElement(str) {
+  var result = []
+  for (var pair of str){
+    if(pair == "G"){
+      result.push([pair,"C"])
+    }else if (pair == "C"){
+      result.push([pair, "G"])
+    }else if(pair == "A"){
+      result.push([pair,"T"])
+    }else if(pair == "T"){
+      result.push([pair, "A"])
+    }
+     
+  }
+  console.log(result)
+  return result;
+}*/
+
+//ANOTHER SOLUTION
+
+function pairElement(str){
+  
+var pairs = {
+  A :"T",
+  T :"A",
+  C :"G",
+  G :"C"
+}
+
+return str.split("").map(function(key){
+  return [key, pairs[key]]
+})
+}
+
+
+pairElement("GCG");

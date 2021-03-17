@@ -1,0 +1,17 @@
+function fearNotLetter(str) {
+
+  var alphabet = "abcdefghijklmnopqrstuvwxyz"
+  var splitAlphabet = alphabet.split("")
+  var splitStr = str.split("")
+  var sliceAlphabet = splitAlphabet.slice(alphabet.indexOf(str[0]),str.length+alphabet.indexOf(str[0]))
+  var filtered = sliceAlphabet.filter(letter => splitStr.indexOf(letter) === -1).toString()
+
+  if (!filtered){
+    return undefined
+  }
+console.log(filtered)
+ 
+ return filtered;
+}
+
+fearNotLetter("stvwx")

@@ -1,0 +1,21 @@
+function addTogether(a,b) {
+var a = arguments[0]
+var b = arguments[1]
+var sum = 0
+function isNumber(num){
+  if(Number.isInteger(num)) return true
+}
+
+if(isNumber(a)){
+  if(isNumber(b)){
+    return sum = a+b
+  }else if(!b){
+    return function(b) {
+        if (isNumber(b))
+          return sum = a+b;
+  };
+  }  
+}
+}
+
+console.log(addTogether("holaaa"))
